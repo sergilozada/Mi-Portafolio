@@ -319,16 +319,25 @@ function installAudioUnlock() {
 // hover for variety. Fetched + decoded once on first play; subsequent hovers
 // just spawn a fresh BufferSource (cheap, can overlap).
 const KEY_SOUND_URLS = [
-  "/sounds/switch_press.mp3",
-  "/sounds/switch_release.mp3",
+  "sounds/switch_press.mp3",
+  "sounds/switch_release.mp3",
 ] as const;
 const keySoundBuffers: (AudioBuffer | null)[] = [null, null];
 let keySoundsLoading: Promise<void> | null = null;
+
+function getSoundUrl(path: string): string {
+  if (typeof window === "undefined") return path;
+  const basePath = window.location.pathname.startsWith("/Mi-Portafolio")
+    ? "/Mi-Portafolio/"
+    : "/";
+  return `${basePath}${path}`;
+}
+
 function loadKeySounds(ctx: AudioContext): Promise<void> {
   if (keySoundsLoading) return keySoundsLoading;
   keySoundsLoading = Promise.all(
     KEY_SOUND_URLS.map((url, i) =>
-      fetch(url)
+      fetch(getSoundUrl(url))
         .then((r) => r.arrayBuffer())
         .then((buf) => ctx.decodeAudioData(buf))
         .then((decoded) => {
@@ -356,7 +365,11 @@ function playKeyClick(seed = 0) {
     }
     const ctx = audioCtx;
     if (ctx.state === "suspended") {
-      ctx.resume().catch(() => {});
+      ctx.resume().then(() => {
+        if (ctx.state === "running") {
+          loadKeySounds(ctx).then(() => playKeyClick(seed));
+        }
+      }).catch(() => {});
       return;
     }
     const trigger = () => {
