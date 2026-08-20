@@ -101,33 +101,36 @@ const experiences: Array<{
   stack: string[];
 }> = [
   {
-    role: { es: "Tech Lead", en: "Tech Lead" },
-    company: "Activalink",
-    period: { es: "2023 — Presente", en: "2023 — Present" },
-    location: { es: "Alcoy, España", en: "Alcoy, Spain" },
+    role: {
+      es: "Estudiante de Ingeniería de Software",
+      en: "Software Engineering Student",
+    },
+    company: "Universidad Tecnológica del Perú (UTP)",
+    period: { es: "2.º ciclo", en: "2nd cycle" },
+    location: { es: "Ica, Perú", en: "Ica, Peru" },
     summary: {
-      es: "Activalink implementa y adapta ERPs para pymes y grandes empresas. Desarrollo módulos y personalizaciones custom sobre Odoo, integraciones a medida y proyectos de implantación llave en mano. Lidero un equipo de 3 desarrolladores: nuestro trabajo se mide en tiempo ahorrado y errores evitados.",
-      en: "Activalink implements and customises ERPs for SMBs and large companies. I build custom modules and personalisations on top of Odoo, bespoke integrations, and end-to-end implementation projects. I lead a team of 3 developers: our work is measured in time saved and errors avoided.",
+      es: "Tengo 17 años y estudio Ingeniería de Software en la UTP, sede Ica. Estoy construyendo una base sólida en programación y desarrollo web mediante proyectos propios.",
+      en: "I am 17 and study Software Engineering at UTP in Ica. I am building a strong foundation in programming and web development through personal projects.",
     },
     bullets: [
       {
-        es: "OCR de facturas en Odoo — de 4 h/día a 30 min (−87 %).",
-        en: "Invoice OCR in Odoo — from 4 h/day down to 30 min (−87 %).",
+        es: "Segundo ciclo de la carrera de Ingeniería de Software.",
+        en: "Second cycle of the Software Engineering degree.",
       },
       {
-        es: "Logística con mapa interactivo — −60 % errores de seguimiento.",
-        en: "Interactive logistics map — −60 % tracking errors.",
+        es: "Aprendizaje práctico mediante proyectos web propios.",
+        en: "Hands-on learning through personal web projects.",
       },
       {
-        es: "Conciliación automática — cierre contable de 3 días a medio día.",
-        en: "Automated reconciliation — monthly close from 3 days to half a day.",
+        es: "Interés en crear soluciones útiles y seguir creciendo como desarrollador.",
+        en: "Focused on building useful solutions and growing as a developer.",
       },
       {
-        es: "Dashboards financieros — detección temprana de facturas sin emitir.",
-        en: "Financial dashboards — early detection of uninvoiced orders.",
+        es: "Portfolio bilingüe para compartir mi progreso y mis proyectos.",
+        en: "Bilingual portfolio to share my progress and projects.",
       },
     ],
-    stack: ["Odoo", "Python", "PostgreSQL", "Next.js", "TypeScript", "Docker"],
+    stack: ["JavaScript", "TypeScript", "React", "Next.js", "Python", "Git"],
   },
 ];
 

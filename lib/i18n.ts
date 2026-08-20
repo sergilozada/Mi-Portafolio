@@ -36,19 +36,19 @@ export const DICT = {
   },
   header: {
     availability: {
-      es: "Open to opportunities",
-      en: "Open to opportunities",
+      es: "Abierto a aprender y colaborar",
+      en: "Open to learning and collaboration",
     },
   },
   hero: {
     greeting: { es: "Hola, soy", en: "Hi, I am" },
     roleLine: {
-      es: "Software Engineer & Tech Lead.",
-      en: "Software Engineer & Tech Lead.",
+      es: "Estudiante de Ingeniería de Software.",
+      en: "Software Engineering student.",
     },
     tagline: {
-      es: "Especializado en ERPs y aplicaciones full-stack para empresas.",
-      en: "Specialised in ERPs and full-stack apps for businesses.",
+      es: "Tengo 17 años y construyo proyectos web mientras avanzo en mi carrera.",
+      en: "I am 17 and build web projects while progressing through my degree.",
     },
     cv: { es: "Descargar CV", en: "Download CV" },
     hire: { es: "Contactarme", en: "Contact me" },
@@ -70,10 +70,10 @@ export const DICT = {
     },
   },
   experience: {
-    title: { es: "Experience", en: "Experience" },
+    title: { es: "Formación", en: "Education" },
     subtitle: {
-      es: "Mi trayectoria profesional.",
-      en: "My professional journey.",
+      es: "Dónde estoy aprendiendo y creciendo.",
+      en: "Where I am learning and growing.",
     },
   },
   projects: {

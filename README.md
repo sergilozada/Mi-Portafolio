@@ -1,6 +1,8 @@
 # Sergi Lozada | Portfolio
 
-Este es mi portfolio personal como desarrollador de software. Lo he creado para mostrar mi forma de trabajar, las tecnologías que utilizo y algunos de los proyectos que estoy construyendo.
+Este es mi portfolio personal como estudiante de Ingeniería de Software. Tengo 17 años, estudio en la Universidad Tecnológica del Perú (UTP), sede Ica, y actualmente voy por el segundo ciclo de la carrera.
+
+Lo he creado para mostrar mi progreso, las tecnologías que estoy aprendiendo y algunos de los proyectos que estoy construyendo.
 
 En lugar de una página estática, quería una experiencia con algo de personalidad: una escena 3D de teclado, animaciones al hacer scroll, temas inspirados en las estaciones del año y soporte en español e inglés.
 
@@ -12,9 +14,15 @@ En lugar de una página estática, quería una experiencia con algo de personali
 
 ## Sobre mí
 
-Me interesa crear aplicaciones útiles, claras y fáciles de mantener. Actualmente estoy trabajando en soluciones web para gestión inmobiliaria, cotización de lotes y presentación de proyectos residenciales.
+Me interesa crear aplicaciones útiles, claras y fáciles de mantener. Actualmente estoy aprendiendo y trabajando en soluciones web para gestión inmobiliaria, cotización de lotes y presentación de proyectos residenciales.
 
-Me gusta participar en todo el proceso: entender el problema, diseñar la solución, construir la interfaz y dejar una base técnica que pueda seguir creciendo.
+Estoy construyendo mi base en programación y desarrollo web a través de proyectos propios. Me gusta participar en todo el proceso: entender el problema, diseñar la solución, construir la interfaz y seguir mejorando el resultado.
+
+## Formación
+
+- Ingeniería de Software en la Universidad Tecnológica del Perú (UTP).
+- Sede Ica, Perú.
+- Segundo ciclo.
 
 ## Proyectos destacados
 
