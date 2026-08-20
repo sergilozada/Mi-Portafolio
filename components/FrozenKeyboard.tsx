@@ -300,12 +300,26 @@ const PRESS_DEPTH = 0.15;
 // the first real interaction so every subsequent hover plays immediately.
 let audioCtx: AudioContext | null = null;
 let audioUnlockInstalled = false;
+
+function createAudioContext(): AudioContext | null {
+  if (typeof window === "undefined") return null;
+  if (audioCtx) return audioCtx;
+  const Ctor =
+    window.AudioContext ||
+    (window as unknown as { webkitAudioContext: typeof AudioContext })
+      .webkitAudioContext;
+  if (!Ctor) return null;
+  audioCtx = new Ctor();
+  return audioCtx;
+}
+
 function installAudioUnlock() {
   if (audioUnlockInstalled || typeof window === "undefined") return;
   audioUnlockInstalled = true;
   const unlock = () => {
-    if (audioCtx && audioCtx.state === "suspended") {
-      audioCtx.resume().catch(() => {});
+    const ctx = createAudioContext();
+    if (ctx?.state === "suspended") {
+      ctx.resume().catch(() => {});
     }
     window.removeEventListener("pointerdown", unlock);
     window.removeEventListener("keydown", unlock);
@@ -354,16 +368,9 @@ function loadKeySounds(ctx: AudioContext): Promise<void> {
 function playKeyClick(seed = 0) {
   if (typeof window === "undefined") return;
   try {
-    if (!audioCtx) {
-      const Ctor =
-        window.AudioContext ||
-        (window as unknown as { webkitAudioContext: typeof AudioContext })
-          .webkitAudioContext;
-      if (!Ctor) return;
-      audioCtx = new Ctor();
-      installAudioUnlock();
-    }
-    const ctx = audioCtx;
+    const ctx = createAudioContext();
+    if (!ctx) return;
+    installAudioUnlock();
     if (ctx.state === "suspended") {
       ctx.resume().then(() => {
         if (ctx.state === "running") {
@@ -612,6 +619,10 @@ function Keyboard({ mobile }: { mobile: boolean }) {
   // decays to zero — produces a flip between project sections.
   const spinRef = useRef(0);
   const prevSectionId = useRef<string>("hero");
+
+  useEffect(() => {
+    installAudioUnlock();
+  }, []);
 
   // When scrolling between two project sections, kick off a spin. Direction
   // alternates per target project so consecutive flips don't look identical.
